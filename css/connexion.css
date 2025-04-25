@@ -1,0 +1,73 @@
+
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  
+
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: linear-gradient(to top, #A7A7A7, #FFFFFF);
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c4151c; 
+    color: white;
+    padding: 0 20px;
+    height: 60px;
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+  }
+
+  .navbar-left img {
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  .navbar-left span {
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 500px;
+    white-space: nowrap;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  .navbar-center,
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .divider {
+    height: 30px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 10px;
+  }
+
+  
