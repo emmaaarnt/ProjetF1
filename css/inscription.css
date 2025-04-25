@@ -1,15 +1,4 @@
-
-body {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 100%;
-      letter-spacing: 0%;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-
-
-  }
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
   html, body {
     height: 100%;
@@ -19,8 +8,8 @@ body {
   
   body {
     background: linear-gradient(to top, #A7A7A7, #FFFFFF);
+    
   }
-
 
   .navbar {
     display: flex;
@@ -30,6 +19,13 @@ body {
     color: white;
     padding: 0 20px;
     height: 60px;
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
   }
 
   .navbar-left {
@@ -69,4 +65,111 @@ body {
     width: 1px;
     background-color: rgba(255, 255, 255, 0.5);
     margin: 0 10px;
+  }
+
+
+
+  .inner-box {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #252424;
+    border: 5px solid #c4151c;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 1200px;
+    height: 550px;
+    z-index: 1;
+  }
+
+  .formulaire-wrapper {
+    margin: 0 auto;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(to bottom, #d3d3d3, #ffffff);
+    color: white;
+    font-size: 13px;
+    padding: 20px;
+  }
+
+  .formulaireinscription {
+    text-align: center;
+    font-size: 1.3em;
+    margin-top: 65px;
+    color: white;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .formulaire-container {
+    width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .formulaire,
+  .adresse,
+  .pseudomdp {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    font-size: 20px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="date"] {
+    padding: 5px 6px;
+    border: none;
+    border-radius: 4px;
+    background-color: #444;
+    color: white;
+    font-size: 0.8em;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  label {
+    font-size: 0.75em;
+    color: #ccc;
+  }
+  
+  button[type="submit"] {
+    margin: 20px auto 5px;
+    background-color: red;
+    color: white;
+    padding: 8px 14px;
+    font-size: 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    z-index: 2;
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #b30000;
+  }
+  
+  .dejauncompte {
+    text-align: center;
+    margin-top: 5px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .dejauncompte a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: medium;
   }
