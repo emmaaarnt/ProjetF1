@@ -507,83 +507,69 @@ button[type="submit"]:hover {
   flex: 1 1 30%;
 }
 
-/* --- RESPONSIVE DESIGN --- */
+/* RESPONSIVE */
+/* Tablette et Mobile */
+@media (max-width: 992px) {
+  .navbar-left span {
+    margin-right: 10px;
+  }
 
-/* Mobiles (480px et moins) */
-@media (max-width: 480px) {
-  .formulaireinscription {
-    font-size: 1.5rem;
+  .inner-box {
+    padding: 40px 20px;
+    margin: 40px 10px;
   }
+
   .formulaire-container {
-    max-width: 90%;
-    gap: 15px;
+    flex-direction: column;
+    align-items: center;
   }
+
   .formulaire, .adresse, .pseudomdp {
-    flex: 1 1 100%;
-    min-width: 100%;
+    width: 100%;
   }
+
+  button[type="submit"] {
+    width: 70%;
+  }
+}
+
+/* Mobile petit */
+@media (max-width: 600px) {
+  .formulaireinscription {
+    font-size: 1.5em;
+  }
+
+  label {
+    font-size: 0.8em;
+  }
+
   input[type="text"],
   input[type="email"],
   input[type="password"],
   input[type="tel"],
   input[type="date"] {
-    font-size: 0.8rem;
-    padding: 6px 8px;
+    font-size: 0.9em;
   }
+
   button[type="submit"] {
-    width: 90%;
-    font-size: 0.9rem;
+    font-size: 0.9em;
+    padding: 10px 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .navbar-center, .navbar-right {
+    margin-top: 10px;
   }
 }
 
-/* Petits écrans/tablettes (481px à 760px) */
-@media (min-width: 481px) and (max-width: 760px) {
-  .formulaireinscription {
-    font-size: 1.6rem;
-  }
-  .formulaire-container {
-    max-width: 90%;
-  }
-  .formulaire, .adresse, .pseudomdp {
-    flex: 1 1 100%;
-  }
-}
-
-/* Tablettes et écrans moyens (761px à 1020px) */
-@media (min-width: 761px) and (max-width: 1020px) {
-  .formulaire-wrapper {
-    max-width: 90%;
-  }
-  .formulaire-container {
-    max-width: 700px;
-  }
-  .formulaireinscription {
-    font-size: 1.8rem;
-  }
-}
-
-/* Grands écrans (1021px à 1920px) */
-@media (min-width: 1021px) and (max-width: 1920px) {
-  .formulaire-wrapper {
-    max-width: 90%;
-  }
-  .formulaire-container {
-    max-width: 800px;
-  }
-  .formulaireinscription {
-    font-size: 2rem;
-  }
-}
-
-/* Grands écrans (1921px et +) */
-@media (min-width: 1921px) {
-  .formulaire-wrapper {
-    max-width: 1200px;
-  }
-  .formulaire-container {
-    max-width: 900px;
-  }
-  .formulaireinscription {
-    font-size: 2.2rem;
+/* Très grands écrans */
+@media (min-width: 1600px) {
+  .inner-box {
+    max-width: 1400px;
   }
 }
