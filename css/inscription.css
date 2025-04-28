@@ -408,32 +408,26 @@ body {
   z-index: 1;
   height: auto;
   min-height: 600px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4); /* Petite ombre sympa */
 }
 
-
-
-/* FORMULAIRE GLOBAL */
+/* CONTENEUR FORMULAIRE DANS LE CADRE */
 .formulaire-wrapper {
-  width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-  position: relative;
+  padding: 20px;
+  max-width: 1000px;
+  position: relative; /* pour superposition */
   z-index: 2;
 }
 
 /* TITRE */
 .formulaireinscription {
   text-align: center;
-  font-size: 1.8rem; /* Réduit par rapport à avant */
+  font-size: 2rem;
   color: white;
   margin-bottom: 20px;
 }
 
-
-/* CONTENEUR DES CHAMPS */
+/* FORMULAIRE */
 .formulaire-container {
   display: flex;
   flex-wrap: wrap;
@@ -441,35 +435,32 @@ body {
   justify-content: center;
 }
 
-/* BLOCS CHAMPS */
+
 .formulaire, .adresse, .pseudomdp {
-  flex: 1 1 300px;
+  flex: 1 1 250px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-width: 250px;
+  min-width: 200px;
   max-width: 100%;
 }
 
-/* LABELS */
 label {
   color: #ccc;
-  font-size: 0.9em;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 0.9rem;
 }
 
-/* INPUTS */
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="tel"],
 input[type="date"] {
-  padding: 10px;
-  border-radius: 5px;
+  padding: 8px 10px;
+  border-radius: 4px;
   border: none;
   background-color: #444;
   color: white;
-  font-size: 1em;
+  font-size: 0.85rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -477,99 +468,83 @@ input[type="date"] {
 /* BOUTON */
 button[type="submit"] {
   display: block;
-  margin: 30px auto 0;
-  padding: 12px 24px;
-  font-size: 1em;
+  margin: 30px auto 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
   background-color: red;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-family: 'Orbitron', sans-serif;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
-
 button[type="submit"]:hover {
   background-color: #b30000;
 }
 
 
-
-/* CONTAINER GENERAL (SI BESOIN POUR D'AUTRES BLOCS) */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-/* ITEMS FLEXIBLES */
-.item {
-  flex: 1 1 30%;
-}
-
 /* RESPONSIVE */
 /* Tablette et Mobile */
-@media (max-width: 992px) {
-  .navbar-left span {
-    margin-right: 10px;
-  }
-
-  .inner-box {
-    padding: 40px 20px;
-    margin: 40px 10px;
-  }
-
-  .formulaire-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .formulaire, .adresse, .pseudomdp {
-    width: 100%;
-  }
-
-  button[type="submit"] {
-    width: 70%;
-  }
-}
-
-/* Mobile petit */
-@media (max-width: 600px) {
-  .formulaireinscription {
-    font-size: 1.5em;
-  }
-
-  label {
-    font-size: 0.8em;
-  }
-
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  input[type="tel"],
-  input[type="date"] {
-    font-size: 0.9em;
-  }
-
-  button[type="submit"] {
-    font-size: 0.9em;
-    padding: 10px 20px;
-  }
-
+@media (max-width: 480px) {
   .navbar {
     flex-direction: column;
     height: auto;
     padding: 10px;
   }
-
-  .navbar-center, .navbar-right {
-    margin-top: 10px;
+  .inner-box {
+    width: 95%;
+    padding: 20px;
+  }
+  .formulaire-wrapper {
+    max-width: 90%;
+  }
+  .formulaire-container {
+    flex-direction: column;
+    gap: 15px;
   }
 }
 
-/* Très grands écrans */
-@media (min-width: 1600px) {
+/* Petits écrans / tablettes (481px à 760px) */
+@media (min-width: 481px) and (max-width: 760px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+  }
   .inner-box {
-    max-width: 1400px;
+    width: 90%;
+    padding: 30px;
+  }
+  .formulaire-wrapper {
+    max-width: 90%;
+  }
+}
+
+/* Tablettes et moyens écrans (761px à 1020px) */
+@media (min-width: 761px) and (max-width: 1020px) {
+  .inner-box {
+    width: 85%;
+  }
+  .formulaire-wrapper {
+    max-width: 85%;
+  }
+}
+
+/* Grands écrans (1021px à 1920px) */
+@media (min-width: 1021px) and (max-width: 1920px) {
+  .inner-box {
+    width: 75%;
+  }
+  .formulaire-wrapper {
+    max-width: 1000px;
+  }
+}
+
+/* Très grands écrans (1921px et plus) */
+@media (min-width: 1921px) {
+  .inner-box {
+    width: 65%;
+  }
+  .formulaire-wrapper {
+    max-width: 1200px;
   }
 }
