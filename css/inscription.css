@@ -562,6 +562,19 @@ button[type="submit"]:hover {
   }
 }
 
+/* Grands écrans (1021px à 1920px) */
+@media (min-width: 1021px) and (max-width: 1920px) {
+  .formulaire-wrapper {
+    max-width: 90%;
+  }
+  .formulaire-container {
+    max-width: 800px;
+  }
+  .formulaireinscription {
+    font-size: 2rem;
+  }
+}
+
 /* Grands écrans (1921px et +) */
 @media (min-width: 1921px) {
   .formulaire-wrapper {
