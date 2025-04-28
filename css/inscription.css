@@ -246,3 +246,26 @@ button[type="submit"]:hover {
     flex: 1 1 100%;
   }
 }
+
+
+/*xtra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .item {
+    flex: 1 1 30%;
+  }
+}
+
+/*large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .container {
+    max-width: 992px;
+    margin: 0 auto;
+  }
+  .item {
+    flex: 1 1 45%;
+  }
+}
