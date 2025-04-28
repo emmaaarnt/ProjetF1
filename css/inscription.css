@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+ /*@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
 html, body {
   height: 100%;
@@ -82,7 +82,7 @@ body {
 }
 
 
-/* CONTENEUR GLOBAL */
+/* CONTENEUR GLOBAL 
 .formulaire-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -91,7 +91,7 @@ body {
   z-index: 2;
 }
 
-/* TITRE */
+/* TITRE 
 .formulaireinscription {
   text-align: center;
   font-size: 1.5em;
@@ -99,7 +99,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* CONTENEUR DES CHAMPS */
+/* CONTENEUR DES CHAMPS 
 .formulaire-container {
   display: flex;
   flex-wrap: wrap;
@@ -107,7 +107,7 @@ body {
   justify-content: center;
 }
 
-/* CHAMPS */
+/* CHAMPS 
 .formulaire, .adresse, .pseudomdp {
   flex: 1 1 250px;
   display: flex;
@@ -137,7 +137,7 @@ input[type="date"] {
   box-sizing: border-box;
 }
 
-/* BOUTON */
+/* BOUTON 
 button[type="submit"] {
   display: block;
   margin: 30px auto 10px;
@@ -154,7 +154,7 @@ button[type="submit"]:hover {
   background-color: #b30000;
 }
 
-/* LIEN CONNEXION */
+/* LIEN CONNEXION 
 .dejauncompte {
   text-align: center;
   color: #ccc;
@@ -166,7 +166,7 @@ button[type="submit"]:hover {
   font-size: 0.9em;
 }
 
-/* MEDIA QUERIES POUR MOBILE */
+/* MEDIA QUERIES POUR MOBILE 
 @media (max-width: 768px) {
   .formulaire-container {
     flex-direction: column;
@@ -209,7 +209,7 @@ button[type="submit"]:hover {
   }
 }
 
-/* Pour les écrans de moins de 768px responsive*/
+/* Pour les écrans de moins de 768px responsive
 @media (max-width: 768px) {
   body {
     font-size: 16px;
@@ -240,7 +240,7 @@ button[type="submit"]:hover {
   flex: 1 1 30%;
 }
 
-/* Mobile, responsive*/
+/* Mobile, responsive
 @media (max-width: 768px) {
   .item {
     flex: 1 1 100%;
@@ -248,7 +248,7 @@ button[type="submit"]:hover {
 }
 
 
-/*xtra large devices (large desktops, 1200px and up)*/
+/*xtra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .container {
     max-width: 1200px;
@@ -259,7 +259,7 @@ button[type="submit"]:hover {
   }
 }
 
-/*large devices (desktops, 992px and up)*/
+/*large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .container {
     max-width: 992px;
@@ -270,7 +270,7 @@ button[type="submit"]:hover {
   }
 }
 
-/*extra small devices (phones, less than 768px)*/
+/*extra small devices (phones, less than 768px)
 @media (max-width: 768px) {
   .container {
     max-width: 100%;
@@ -281,7 +281,7 @@ button[type="submit"]:hover {
   }
 }
 
-/*small devices (tablets, 768px and up)*/
+/*small devices (tablets, 768px and up)
 @media (min-width: 768px) and (max-width: 992px) {
   .container {
     max-width: 768px;
@@ -292,7 +292,7 @@ button[type="submit"]:hover {
   }
 }
 
-/*extra large devices (1920px and up)*/
+/*extra large devices (1920px and up)
 @media (min-width: 1920px) {
   .container {
     max-width: 1920px;
@@ -300,5 +300,277 @@ button[type="submit"]:hover {
   }
   .item {
     flex: 1 1 20%;
+  }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background: linear-gradient(to top, #A7A7A7, #FFFFFF);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: linear-gradient(to top, #A7A7A7, #FFFFFF);
+    font-family: "orbitron", sans-serif;
+    
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c4151c; 
+    color: white;
+    padding: 0 20px;
+    height: 60px;
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+  }
+
+  .navbar-left img {
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  .navbar-left span {
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 500px;
+    white-space: nowrap;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  .navbar-center,
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .divider {
+    height: 30px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 10px;
+  }
+
+/* RECTANGLE NOIR FOND */
+.inner-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #252424;
+  border: 5px solid #c4151c;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 90%;
+  max-width: 1400px;
+  padding: 40px;
+  box-sizing: border-box;
+  z-index: 1;
+  height: auto;
+  min-height: 600px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4); /* Petite ombre sympa */
+}
+
+
+
+/* FORMULAIRE GLOBAL */
+.formulaire-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+/* TITRE */
+.formulaireinscription {
+  text-align: center;
+  font-size: 1.8rem; /* Réduit par rapport à avant */
+  color: white;
+  margin-bottom: 20px;
+}
+
+
+/* CONTENEUR DES CHAMPS */
+.formulaire-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* BLOCS CHAMPS */
+.formulaire, .adresse, .pseudomdp {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 250px;
+  max-width: 100%;
+}
+
+/* LABELS */
+label {
+  color: #ccc;
+  font-size: 0.9em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* INPUTS */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #444;
+  color: white;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* BOUTON */
+button[type="submit"] {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 24px;
+  font-size: 1em;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+button[type="submit"]:hover {
+  background-color: #b30000;
+}
+
+
+
+/* CONTAINER GENERAL (SI BESOIN POUR D'AUTRES BLOCS) */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* ITEMS FLEXIBLES */
+.item {
+  flex: 1 1 30%;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Mobiles (480px et moins) */
+@media (max-width: 480px) {
+  .formulaireinscription {
+    font-size: 1.5rem;
+  }
+  .formulaire-container {
+    max-width: 90%;
+    gap: 15px;
+  }
+  .formulaire, .adresse, .pseudomdp {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="date"] {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+  button[type="submit"] {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+}
+
+/* Petits écrans/tablettes (481px à 760px) */
+@media (min-width: 481px) and (max-width: 760px) {
+  .formulaireinscription {
+    font-size: 1.6rem;
+  }
+  .formulaire-container {
+    max-width: 90%;
+  }
+  .formulaire, .adresse, .pseudomdp {
+    flex: 1 1 100%;
+  }
+}
+
+/* Tablettes et écrans moyens (761px à 1020px) */
+@media (min-width: 761px) and (max-width: 1020px) {
+  .formulaire-wrapper {
+    max-width: 90%;
+  }
+  .formulaire-container {
+    max-width: 700px;
+  }
+  .formulaireinscription {
+    font-size: 1.8rem;
+  }
+}
+
+/* Grands écrans (1921px et +) */
+@media (min-width: 1921px) {
+  .formulaire-wrapper {
+    max-width: 1200px;
+  }
+  .formulaire-container {
+    max-width: 900px;
+  }
+  .formulaireinscription {
+    font-size: 2.2rem;
   }
 }
