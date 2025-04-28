@@ -269,3 +269,36 @@ button[type="submit"]:hover {
     flex: 1 1 45%;
   }
 }
+
+/*extra small devices (phones, less than 768px)*/
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .item {
+    flex: 1 1 100%;
+  }
+}
+
+/*small devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 992px) {
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+  .item {
+    flex: 1 1 50%;
+  }
+}
+
+/*extra large devices (1920px and up)*/
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+  .item {
+    flex: 1 1 20%;
+  }
+}
