@@ -118,3 +118,58 @@ body {
   .submit:hover {
     background-color: #a00000;
   }
+
+  #resultats {
+    background-color: #121212;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 30, 0, 0.4);
+}
+
+.course {
+    background-color: #1a1a1a;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+}
+
+.course h3 {
+    color: #ffae00;
+}
+
+.course p {
+    margin: 0.3rem 0;
+}
+
+.pending {
+    color: #888;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.pilotes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre horizontalement */
+  justify-content: center; /* Centre verticalement */
+  margin-bottom: 20px;
+}
+
+.pilotes-container ul {
+  list-style-type: none; /* Enlève les puces */
+  padding: 0;
+  text-align: center; /* Centre le texte à l'intérieur des éléments de la liste */
+}
+
+.pilotes-container li {
+  margin: 5px 0; /* Espace entre chaque ligne */
+}
+
+.pilotes-container label {
+  display: inline-block;
+  margin-right: 10px; /* Espacement entre les labels et les inputs */
+}
