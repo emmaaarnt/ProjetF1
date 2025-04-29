@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;800&display=swap" rel="stylesheet" />
   
 </head>
+
 <body>
 
   <nav class="navbar">
@@ -41,19 +42,18 @@
 
   <div class="connexion">
     <h1>Connexion</h1>
-    <form action="../php/connexion.php" method="post"></form>
-  </div>
+    <form action="../php/connexion.php" method="post">
+        <div class="formulaire">
+            <label for="pseudo">Nom d'utilisateur :</label>
+            <input type="text" id="pseudo" name="pseudo" required />
 
-  <div class="formulaire">
-   
-      <label for="username">Nom d'utilisateur :</label>
-      <input type="text" id="username" name="username" required />
-
-      <label for="password">Mot de passe :</label>
-      <input type="password" id="password" name="password" required />
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required />
+        </div>
+        
+        <button type="submit"> Me connecter</button>
+    </form>
   </div>
-  
-  <button type="submit"> Me connecter</button>
  
   <div class="pasdecompte">
       <a href="../html/inscription.html">Pas encore de compte ?</a>

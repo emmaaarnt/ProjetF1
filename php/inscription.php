@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $numero = $_POST['numero'];
     $code_postal = $_POST['code_postal'];
     $pseudo = $_POST['pseudo'];
-    $mot_de_passe = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $mot_de_passe = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
     // coversion date de naissance en fragment 
     // Extraire le jour
