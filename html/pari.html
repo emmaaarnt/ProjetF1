@@ -12,6 +12,95 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;800&display=swap" rel="stylesheet" />
   
 </head>
+
+<!--(js principal) Scrypete pour resoudre un proble d'estetisme pour les choix de l'utilisateur -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const top1Btn = document.querySelector(".buttons button:nth-child(1)");
+    const top3Btn = document.querySelector(".buttons button:nth-child(3)");
+    const parisListe = document.getElementById("mes-paris-liste");
+  
+    top1Btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const selections = getSelectedPilotes();
+      if (selections.length !== 1) {
+        alert("Sélectionnez un seul pilote pour le TOP 1.");
+        return;
+      }
+      addPari(`TOP 1 : ${selections[0]}`);
+    });
+  
+    top3Btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const selections = getSelectedPilotes();
+      if (selections.length !== 3) {
+        alert("Sélectionnez exactement 3 pilotes pour le TOP 3.");
+        return;
+      }
+      addPari(`TOP 3 : ${selections.join(" / ")}`);
+    });
+  
+    function getSelectedPilotes() {
+      const checked = document.querySelectorAll('input[name="pilote"]:checked');
+      return Array.from(checked).map(input => input.dataset.nom);
+    }
+  
+    function addPari(text) {
+      const li = document.createElement("li");
+      li.textContent = text;
+      parisListe.appendChild(li);
+    }
+  });
+</script>
+  
+
+<!-- (js1) Pour cacher les choix utilisateur --> 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("form-pari");
+      const hiddenInput = document.getElementById("pilotes-selectionnes");
+    
+      form.addEventListener("submit", function (e) {
+        const selected = Array.from(document.querySelectorAll('input[name="pilote"]:checked'))
+          .map(input => input.dataset.nom);
+    
+        if (selected.length === 0) {
+          e.preventDefault();
+          alert("Veuillez sélectionner au moins un pilote.");
+          return;
+        }
+    
+        hiddenInput.value = selected.join(",");
+      });
+    });
+</script>
+
+<!-- (js2) Pour pour voir les détails d’un pari --> 
+<script>
+function afficherDetailsPari() {
+  const paris = document.querySelectorAll("#mes-paris-liste li");
+  if (paris.length === 0) {
+    alert("Aucun pari à afficher.");
+  } else {
+    alert("Pari détaillé :\n" + Array.from(paris).map(li => li.textContent).join("\n"));
+  }
+}
+</script>
+
+<!-- (js3) Pour pour voir les resultat --> 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const maintenant = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const heure = maintenant.toLocaleTimeString('fr-FR');
+    const date = maintenant.toLocaleDateString('fr-FR', options);
+    document.getElementById("date-heure").textContent = `${date} à ${heure}`;
+  });
+  </script>
+
+
+
+
 <body>
 
   <nav class="navbar">
@@ -35,128 +124,128 @@
     </div>
   </nav>
 
+  <!-- Modif Pari (js2)-->>
   <div class="container">
     <div class="section">
       <h2>Mes paris</h2>
-      <ul>
-        <li>Course - top 3 : pilotes / pilotes / pilotes</li>
-        <li>Course - top 3 : pilotes / pilotes / pilotes</li>
-        <li>Course - top 1 : pilote</li>
-        <li>Course - top 1 : pilote</li>
-        <li>Course - top 1 : pilote</li>
+      <ul id="mes-paris-liste">
+        <!-- rempli dynamiquement -->
       </ul>
+      <button class="submit" onclick="afficherDetailsPari()">Voir</button>
     </div>
 
     <div class="dividerpari"></div>
 
+    <!--Modification Principal -->
     <div class="section center">
       <h2>Faire un pari</h2>
-
-      <div class="buttons">
-        <button class="submit">TOP 1
-          <a href="../php/paritopun.php"></a>
-        </button>
-        
-        <span>ou</span>
-
-        <button class="submit">TOP 3</button>
-      </div>
+      <p>Sprint Qualification</p>
+    
+      <form action="../php/enregistrer_pari.php" method="POST" id="form-pari">
+        <div class="buttons">
+          <button class="submit" name="type_pari" value="top1" type="submit">Choix</button>
+          <span>ou</span>
+          <button class="submit" name="type_pari" value="top3" type="submit">Choix Multiple</button>
+        </div>
+    
+        <input type="hidden" name="pilotes_selectionnes" id="pilotes-selectionnes">
+      </form>
     </div>
     <div class="pilotes-container">
-      <ul>
+      <ul id="mes-paris-liste" style="list-style: none; padding-left: 0;">
         <li>
           <label for="piastri">Oscar Piastri</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="piastri" data-nom="Oscar Piastri">
         </li>
         <li>
           <label for="norris">Lando Norris</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Norris" data-nom="Lando Norris">
         </li>
         <li>
           <label for="verstappen">Max Verstappen</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Verstappen" data-nom="Max Verstappen">
         </li>
         <li>
           <label for="hadjar">Isack Hadjar</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Hadjar" data-nom="Isack Hadjar">
         </li>
         <li>
           <label for="russell">George Russell</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Russell" data-nom="George Russell">
         </li>
         <li>
           <label for="antonelli">Kimi Antonelli</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Antonelli" data-nom="Kimi Antonelli">
         </li>
         <li>
           <label for="leclerc">Charles Leclerc</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Leclerc" data-nom="Charles Leclerc">
         </li>
         <li>
           <label for="hamilton">Lewis Hamilton</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Hamilton" data-nom="Lewis Hamilton">
         </li>
         <li>
           <label for="alonso">Fernando Alonso</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Alonso" data-nom="Fernando Alonso">
         </li>
         <li>
           <label for="stroll">Lance Stroll</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Stroll" data-nom="Lance Stroll">
         </li>
         <li>
           <label for="sainz">Carlos Sainz</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Sainz" data-nom="Carlos Sainz">
         </li>
         <li>
           <label for="albon">Alexander Albon</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Albon" data-nom="Alexander Albon">
         </li>
         <li>
           <label for="ocon">Esteban Ocon</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Ocon" data-nom="Esteban Ocon">
         </li>
         <li>
           <label for="bearman">Oliver Bearman</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Bearman" data-nom="Oliver Bearman">
         </li>
         <li>
           <label for="gasly">Pierre Gasly</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Gasly" data-nom="Pierre Gasly">
         </li>
         <li>
           <label for="doohan">Jack Doohan</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Doohan" data-nom="Jack Doohan">
         </li>
         <li>
           <label for="bortoleto">Gabriel Bortoleto</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Bortoleto" data-nom="Gabriel Bortoleto">
         </li>
         <li>
           <label for="hulkenberg">Nico Hülkenberg</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Hülkenberg" data-nom="Nico Hülkenberg">
         </li>
         <li>
           <label for="tsunoda">Yuki Tsunoda</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Tsunoda" data-nom="Yuki Tsunoda">
         </li>
         <li>
           <label for="lawson">Liam Lawson</label>
-          <input type="radio" id="pilote" name="pilote" value="pilote">
+          <input type="checkbox" name="pilote" value="Lawson" data-nom="Liam Lawson">
         </li>
       </ul>
     </div>
     
-
+    <!-- Modif Pari (js3)-->>
     <div class="dividerpari"></div>
-
     <div class="section">
       <h2>Résultats</h2>
-        <iframe src="pari.php" width="100%" height="500px" style="border: none;"></iframe>
-      </div>
-      
+      <p>Date et heure des résultats :</p>
+      <p id="date-heure"></p>
+      <iframe src="pari.php" width="100%" height="500px" style="border: none;"></iframe>
     </div>
-  </div>
+
+ 
 
 
 
