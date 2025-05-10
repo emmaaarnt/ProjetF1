@@ -1,39 +1,113 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+<html lang="fr">
 
 <head>
-
-  <meta charset="utf-8" />
-  <title>Formula One Fantasy League</title>
-  <meta name="description" content="Accueil du site" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="stylesheet" href="../css/accueil.css" /> 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;800&display=swap" rel="stylesheet" />
-  
+    <meta charset="UTF-8">
+    <title>Écuries - Formula One Fantasy League</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/ecuries.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;800&display=swap" rel="stylesheet" />
 </head>
+
+
 <body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="../images/logof1.png" alt="Logo F1" />
+            <span>Formula One Fantasy League</span>
+        </div>
+        <div class="navbar-center">
 
-  <nav class="navbar">
-    <div class="navbar-left">
-      <img src="../images/logof1.png" alt="Logo F1" />
-      <span>Formula One Fantasy League</span>
-    </div>
+            <a href="accueil.html">Accueil</a>
+            <a href="ecuries.php" class="active">Écuries</a>
+            <a href="pilotes.html">Pilotes</a>
+            <a href="pari.html">Pari</a>
+            <a href="league.html">League</a>
+        </div>
+        <div class="navbar-right">
+            <div class="divider"></div>
+            <a href="connexion.html">Se connecter</a>
+            <a href="inscription.html">S'inscrire</a>
+        </div>
+    </nav>
 
-    <div class="navbar-center">
-      <a href="../html/accueil.html">Accueil</a>
-      <a href="../html/ecuries.html">Écuries</a>
-      <a href="../html/pilotes.html">Pilotes</a>
-      <a href="../html/pari.html">Pari</a>
-      <a href="../html/league.html">League</a>
-    </div>
+    <main class="team-grid">
 
-    <div class="navbar-right">
-      <div class="divider"></div>
-      <a href="../html/connexion.html">Se connecter</a>
-      <a href="../html/inscription.html">S'inscrire</a>
-    </div>
-  </nav>
+        <div class="team-card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/d/d6/Red_Bull_Racing_logo.svg" alt="Red Bull" />
+            <h2>Red Bull Racing</h2>
+            <p>Leader dominant de l'ère moderne avec technologie de pointe et stratégie agressive.</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/9/9b/Mercedes_AMG_Petronas_Formula_One_Team_Logo.svg" alt="Mercedes" />
+            <h2>Mercedes AMG</h2>
+            <p>Hégémonie depuis 2014 avec des pilotes de légende comme Lewis Hamilton.</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://upload.wikimedia.org/wikipedia/fr/3/32/Scuderia_Ferrari_Logo.svg" alt="Ferrari" />
+            <h2>Scuderia Ferrari</h2>
+            <p>L'âme de la F1 : historique, passion, tifosi et excellence italienne.</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/4/47/McLaren_Racing_logo.svg" alt="McLaren" />
+            <h2>McLaren</h2>
+            <p>Une équipe légendaire au design futuriste et en pleine renaissance.</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/f/f7/Aston_Martin_F1_Team_Logo.svg" alt="Aston Martin" />
+            <h2>Aston Martin</h2>
+            <p>Allure britannique, ambition renouvelée et investissements massifs.</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/2/2f/Alpine_F1_Team_Logo.svg" alt="Alpine" />
+            <h2>Alpine</h2>
+            <p>Représentante de la France en F1 avec un esprit de compétition dynamique.</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/8f/Williams_Grand_Prix_Engineering_Logo.svg" alt="Williams" />
+            <h2>Williams</h2>
+            <p>Héritage inégalé des années 80–90, aujourd’hui en pleine reconstruction.</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/e/e4/Scuderia_AlphaTauri_logo.svg" alt="AlphaTauri" />
+            <h2>RB (ex-AlphaTauri)</h2>
+            <p>Équipe sœur de Red Bull, axée sur le développement des jeunes talents.</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/d/d6/Stake_F1_Team_logo.svg" alt="Stake F1" />
+            <h2>Stake F1 (ex-Alfa Romeo)</h2>
+            <p>Nouveau branding pour l'équipe suisse, anciennement Alfa Romeo.</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/e/e3/Haas_F1_Team_logo.svg" alt="Haas F1" />
+            <h2>Haas F1 Team</h2>
+            <p>Écurie américaine avec une approche pragmatique et technique.</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/d/d6/Sauber_Team_logo.svg" alt="Kick Sauber" />
+            <h2>Kick Sauber</h2>
+            <p>Transition vers Audi F1, cette équipe prépare un retour en force.</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Andretti_Autosport_logo.svg/800px-Andretti_Autosport_logo.svg.png" alt="Andretti" />
+            <h2>Andretti Global</h2>
+            <p>Future écurie ambitieuse, soutenue par Cadillac et prête à révolutionner la grille.</p>
+        </div>
+
+    </main>
 
 </body>
+
 </html>

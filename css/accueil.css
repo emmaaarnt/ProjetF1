@@ -1,108 +1,241 @@
-/* Pour les écrans de moins de 768px responsive*/
-@media (max-width: 768px) {
-  body {
-    font-size: 16px;
-  }
+/*Barre de navigation*/
 
-  nav {
-    flex-direction: column;
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-  }
-
-  .container, .section, .col {
-    flex-direction: column !important;
-    width: 100% !important;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+    background-color: #c4151c;
+    color: white;
+    padding: 0 20px;
+    height: 60px;
 }
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+}
+
+.navbar-left img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.navbar-left span {
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 500px;
+    white-space: nowrap;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-center,
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.divider {
+    height: 30px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 10px;
+}
+
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+    display: flex;
+    align-items: stretch;
+    padding: 40px;
+    gap: 20px;
 }
 
-.item {
-  flex: 1 1 30%;
+.section {
+    flex: 1;
+    padding: 0 20px;
 }
 
-/* Mobile, responsive*/
+.section h2 {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.section ul {
+    list-style: disc;
+    padding-left: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.dividerpari {
+    width: 2px;
+    background-color: black;
+}
+
+.center {
+    text-align: center;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.submit {
+    background-color: #c00000;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.submit:hover {
+    background-color: #a00000;
+}
+
+#resultats {
+    background-color: #121212;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 30, 0, 0.4);
+}
+
+.course {
+    background-color: #1a1a1a;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+}
+
+.course h3 {
+    color: #ffae00;
+}
+
+.course p {
+    margin: 0.3rem 0;
+}
+
+.pending {
+    color: #888;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 40px 0 30px;
+    font-size: 24px;
+    color: #333;
+}
+
+
+/* Bock Body */
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.project:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.project-img img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.project-text {
+    max-width: 500px;
+}
+
+.project-text h3 {
+    font-size: 1.5rem;
+    color: #c4151c;
+    margin-bottom: 10px;
+}
+
+.project-text p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.project-text button {
+    padding: 10px 20px;
+    background-color: white;
+    border: 2px solid #c4151c;
+    color: #c4151c;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.project-text button:hover {
+    background-color: #c4151c;
+    color: white;
+}
+
+
+/* RESPONSIVE */
+
 @media (max-width: 768px) {
-  .item {
-    flex: 1 1 100%;
-  }
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    .navbar-left span {
+        margin-right: 0;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 90%;
+    }
 }
-
-          
-          body {
-          margin: 0;
-          font-family: 'Orbitron', sans-serif;
-            font-weight: 300;
-            font-size: 14px;
-            line-height: 100%;
-            letter-spacing: 0%;
-
-        }
-    
-        .navbar {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          background-color: #c4151c; 
-          color: white;
-          padding: 0 20px;
-          height: 60px;
-        }
-    
-        .navbar-left {
-          display: flex;
-          align-items: center;
-          font-size: 10px;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-
-        }
-    
-        .navbar-left img {
-          height: 20px;
-          margin-right: 10px;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        }
-    
-        .navbar-left span {
-          font-weight: bold;
-          font-size: 15px;
-          margin-right: 500px;
-          white-space: nowrap;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        }
-    
-        .navbar-center,
-        .navbar-right {
-          display: flex;
-          align-items: center;
-          gap: 20px;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        }
-    
-        .navbar a {
-          color: white;
-          text-decoration: none;
-          font-weight: bold;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        }
-    
-        .divider {
-          height: 30px;
-          width: 1px;
-          background-color: rgba(255, 255, 255, 0.5);
-          margin: 0 10px;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        }
-
-        h1 {
-            text-align: center;
-            margin-top: 40px;
-        }

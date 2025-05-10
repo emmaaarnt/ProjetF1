@@ -3,37 +3,88 @@
 
 <head>
 
-  <meta charset="utf-8" />
-  <title>Formula One Fantasy League</title>
-  <meta name="description" content="Accueil du site" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="stylesheet" href="../css/pilotes.css" /> 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;800&display=swap" rel="stylesheet" />
-  
+    <meta charset="utf-8" />
+    <title>Formula One Fantasy League</title>
+    <meta name="description" content="Accueil du site" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/pilotes.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;800&display=swap" rel="stylesheet" />
+
 </head>
+
 <body>
 
-  <nav class="navbar">
-    <div class="navbar-left">
-      <img src="../images/logof1.png" alt="Logo F1" />
-      <span>Formula One Fantasy League</span>
-    </div>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="../images/logof1.png" alt="Logo F1" />
+            <span>Formula One Fantasy League</span>
+        </div>
 
-    <div class="navbar-center">
-        <a href="../html/accueil.html">Accueil</a>
-        <a href="../html/ecuries.html">Écuries</a>
-        <a href="../html/pilotes.html">Pilotes</a>
-        <a href="../html/pari.html">Pari</a>
-        <a href="../html/league.html">League</a>
-      </div>
+        <div class="navbar-center">
+            <a href="../html/accueil.html">Accueil</a>
+            <a href="../html/ecuries.html">Écuries</a>
+            <a href="../html/pilotes.html">Pilotes</a>
+            <a href="../html/pari.html">Pari</a>
+            <a href="../html/league.html">League</a>
+        </div>
 
-    <div class="navbar-right">
-      <div class="divider"></div> 
-      <a href="../html/connexion.html">Se connecter</a>
-      <a href="../html/inscription.html">S'inscrire</a>
+        <div class="navbar-right">
+            <div class="divider"></div>
+            <a href="../html/connexion.html">Se connecter</a>
+            <a href="../html/inscription.html">S'inscrire</a>
+        </div>
+    </nav>
+
+    <!--Carte Pilote-->
+    <div class="classement">
+        <div class="pilote piastri">
+            <div class="top">
+                <div class="rang">1</div>
+                <div class="points">131<br><span>POINTS</span></div>
+            </div>
+            <div class="info">
+                <span class="prenom">Oscar</span>
+                <span class="nom">PIASTRI</span>
+                <img src="https://flagcdn.com/w40/au.png" alt="Australie" class="drapeau" />
+                <div class="equipe">McLaren</div>
+                <img src="piastri.jpg" alt="Oscar Piastri" class="photo" />
+                <div class="numero">81</div>
+            </div>
+        </div>
+
+        <div class="pilote norris">
+            <div class="top">
+                <div class="rang">2</div>
+                <div class="points">115<br><span>POINTS</span></div>
+            </div>
+            <div class="info">
+                <span class="prenom">Lando</span>
+                <span class="nom">NORRIS</span>
+                <img src="https://flagcdn.com/w40/gb.png" alt="Royaume-Uni" class="drapeau" />
+                <div class="equipe">McLaren</div>
+                <img src="norris.jpg" alt="Lando Norris" class="photo" />
+                <div class="numero">4</div>
+            </div>
+        </div>
+
+        <div class="pilote verstappen">
+            <div class="top">
+                <div class="rang">3</div>
+                <div class="points">99<br><span>POINTS</span></div>
+            </div>
+            <div class="info">
+                <span class="prenom">Max</span>
+                <span class="nom">VERSTAPPEN</span>
+                <img src="https://flagcdn.com/w40/nl.png" alt="Pays-Bas" class="drapeau" />
+                <div class="equipe">Red Bull Racing</div>
+                <img src="verstappen.jpg" alt="Max Verstappen" class="photo" />
+                <div class="numero">1</div>
+            </div>
+        </div>
+
     </div>
-  </nav>
 
 </body>
+
 </html>
