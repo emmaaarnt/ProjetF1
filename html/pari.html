@@ -2,24 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 
 <head>
-
   <meta charset="utf-8" />
   <title>Formula One Fantasy League</title>
   <meta name="description" content="Accueil du site" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="stylesheet" href="../css/pari.css" /> 
+  <link rel="stylesheet" href="../css/pari.css" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;800&display=swap" rel="stylesheet" />
-  
 </head>
 
-<!--(js principal) Scrypete pour resoudre un proble d'estetisme pour les choix de l'utilisateur -->
+<!-- JS pour gestion des boutons TOP 1 / TOP 3 -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const top1Btn = document.querySelector(".buttons button:nth-child(1)");
     const top3Btn = document.querySelector(".buttons button:nth-child(3)");
     const parisListe = document.getElementById("mes-paris-liste");
-  
+
     top1Btn.addEventListener("click", function (e) {
       e.preventDefault();
       const selections = getSelectedPilotes();
@@ -29,7 +26,7 @@
       }
       addPari(`TOP 1 : ${selections[0]}`);
     });
-  
+
     top3Btn.addEventListener("click", function (e) {
       e.preventDefault();
       const selections = getSelectedPilotes();
@@ -39,12 +36,12 @@
       }
       addPari(`TOP 3 : ${selections.join(" / ")}`);
     });
-  
+
     function getSelectedPilotes() {
       const checked = document.querySelectorAll('input[name="pilote"]:checked');
       return Array.from(checked).map(input => input.dataset.nom);
     }
-  
+
     function addPari(text) {
       const li = document.createElement("li");
       li.textContent = text;
@@ -52,42 +49,41 @@
     }
   });
 </script>
-  
 
-<!-- (js1) Pour cacher les choix utilisateur --> 
+<!-- JS pour envoyer les choix sélectionnés au backend -->
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("form-pari");
-      const hiddenInput = document.getElementById("pilotes-selectionnes");
-    
-      form.addEventListener("submit", function (e) {
-        const selected = Array.from(document.querySelectorAll('input[name="pilote"]:checked'))
-          .map(input => input.dataset.nom);
-    
-        if (selected.length === 0) {
-          e.preventDefault();
-          alert("Veuillez sélectionner au moins un pilote.");
-          return;
-        }
-    
-        hiddenInput.value = selected.join(",");
-      });
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("form-pari");
+    const hiddenInput = document.getElementById("pilotes-selectionnes");
+
+    form.addEventListener("submit", function (e) {
+      const selected = Array.from(document.querySelectorAll('input[name="pilote"]:checked'))
+        .map(input => input.dataset.nom);
+
+      if (selected.length === 0) {
+        e.preventDefault();
+        alert("Veuillez sélectionner au moins un pilote.");
+        return;
+      }
+
+      hiddenInput.value = selected.join(",");
     });
+  });
 </script>
 
-<!-- (js2) Pour pour voir les détails d’un pari --> 
+<!-- JS pour voir les détails du pari -->
 <script>
-function afficherDetailsPari() {
-  const paris = document.querySelectorAll("#mes-paris-liste li");
-  if (paris.length === 0) {
-    alert("Aucun pari à afficher.");
-  } else {
-    alert("Pari détaillé :\n" + Array.from(paris).map(li => li.textContent).join("\n"));
+  function afficherDetailsPari() {
+    const paris = document.querySelectorAll("#mes-paris-liste li");
+    if (paris.length === 0) {
+      alert("Aucun pari à afficher.");
+    } else {
+      alert("Pari détaillé :\n" + Array.from(paris).map(li => li.textContent).join("\n"));
+    }
   }
-}
 </script>
 
-<!-- (js3) Pour pour voir les resultat --> 
+<!-- JS pour afficher date et heure -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const maintenant = new Date();
@@ -96,10 +92,7 @@ function afficherDetailsPari() {
     const date = maintenant.toLocaleDateString('fr-FR', options);
     document.getElementById("date-heure").textContent = `${date} à ${heure}`;
   });
-  </script>
-
-
-
+</script>
 
 <body>
 
@@ -108,15 +101,13 @@ function afficherDetailsPari() {
       <img src="../images/logof1.png" alt="Logo F1" />
       <span>Formula One Fantasy League</span>
     </div>
-
     <div class="navbar-center">
-        <a href="../html/accueil.html">Accueil</a>
-        <a href="../html/ecuries.html">Écuries</a>
-        <a href="../html/pilotes.html">Pilotes</a>
-        <a href="../html/pari.html">Pari</a>
-        <a href="../html/league.html">League</a>
-      </div>
-
+      <a href="../html/accueil.html">Accueil</a>
+      <a href="../html/ecuries.html">Écuries</a>
+      <a href="../html/pilotes.html">Pilotes</a>
+      <a href="../html/pari.html">Pari</a>
+      <a href="../html/league.html">League</a>
+    </div>
     <div class="navbar-right">
       <div class="divider"></div>
       <a href="../html/connexion.html">Se connecter</a>
@@ -124,120 +115,62 @@ function afficherDetailsPari() {
     </div>
   </nav>
 
-  <!-- Modif Pari (js2)-->>
   <div class="container">
+    <!-- Section Mes paris -->
     <div class="section">
       <h2>Mes paris</h2>
-      <ul id="mes-paris-liste">
-        <!-- rempli dynamiquement -->
-      </ul>
-      <button class="submit" onclick="afficherDetailsPari()">Voir</button>
+      <ul id="mes-paris-liste"></ul>
+      <div class="center">
+        <button class="submit" onclick="afficherDetailsPari()">Voir</button>
+      </div>
     </div>
 
     <div class="dividerpari"></div>
 
-    <!--Modification Principal -->
+    <!-- Section Faire un pari -->
     <div class="section center">
       <h2>Faire un pari</h2>
       <p>Sprint Qualification</p>
-    
+
       <form action="../php/enregistrer_pari.php" method="POST" id="form-pari">
         <div class="buttons">
           <button class="submit" name="type_pari" value="top1" type="submit">Choix</button>
           <span>ou</span>
           <button class="submit" name="type_pari" value="top3" type="submit">Choix Multiple</button>
         </div>
-    
+
         <input type="hidden" name="pilotes_selectionnes" id="pilotes-selectionnes">
+
+        <div class="pilotes-container">
+          <ul class="grid-pilotes">
+            <li><label><input type="checkbox" name="pilote" value="piastri" data-nom="Oscar Piastri"> Oscar Piastri</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Norris" data-nom="Lando Norris"> Lando Norris</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Verstappen" data-nom="Max Verstappen"> Max Verstappen</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Hadjar" data-nom="Isack Hadjar"> Isack Hadjar</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Russell" data-nom="George Russell"> George Russell</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Antonelli" data-nom="Kimi Antonelli"> Kimi Antonelli</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Leclerc" data-nom="Charles Leclerc"> Charles Leclerc</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Hamilton" data-nom="Lewis Hamilton"> Lewis Hamilton</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Alonso" data-nom="Fernando Alonso"> Fernando Alonso</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Stroll" data-nom="Lance Stroll"> Lance Stroll</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Sainz" data-nom="Carlos Sainz"> Carlos Sainz</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Albon" data-nom="Alexander Albon"> Alexander Albon</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Ocon" data-nom="Esteban Ocon"> Esteban Ocon</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Bearman" data-nom="Oliver Bearman"> Oliver Bearman</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Gasly" data-nom="Pierre Gasly"> Pierre Gasly</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Doohan" data-nom="Jack Doohan"> Jack Doohan</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Bortoleto" data-nom="Gabriel Bortoleto"> Gabriel Bortoleto</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Hülkenberg" data-nom="Nico Hülkenberg"> Nico Hülkenberg</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Tsunoda" data-nom="Yuki Tsunoda"> Yuki Tsunoda</label></li>
+            <li><label><input type="checkbox" name="pilote" value="Lawson" data-nom="Liam Lawson"> Liam Lawson</label></li>
+          </ul>
+        </div>
       </form>
     </div>
-    <div class="pilotes-container">
-      <ul id="mes-paris-liste" style="list-style: none; padding-left: 0;">
-        <li>
-          <label for="piastri">Oscar Piastri</label>
-          <input type="checkbox" name="pilote" value="piastri" data-nom="Oscar Piastri">
-        </li>
-        <li>
-          <label for="norris">Lando Norris</label>
-          <input type="checkbox" name="pilote" value="Norris" data-nom="Lando Norris">
-        </li>
-        <li>
-          <label for="verstappen">Max Verstappen</label>
-          <input type="checkbox" name="pilote" value="Verstappen" data-nom="Max Verstappen">
-        </li>
-        <li>
-          <label for="hadjar">Isack Hadjar</label>
-          <input type="checkbox" name="pilote" value="Hadjar" data-nom="Isack Hadjar">
-        </li>
-        <li>
-          <label for="russell">George Russell</label>
-          <input type="checkbox" name="pilote" value="Russell" data-nom="George Russell">
-        </li>
-        <li>
-          <label for="antonelli">Kimi Antonelli</label>
-          <input type="checkbox" name="pilote" value="Antonelli" data-nom="Kimi Antonelli">
-        </li>
-        <li>
-          <label for="leclerc">Charles Leclerc</label>
-          <input type="checkbox" name="pilote" value="Leclerc" data-nom="Charles Leclerc">
-        </li>
-        <li>
-          <label for="hamilton">Lewis Hamilton</label>
-          <input type="checkbox" name="pilote" value="Hamilton" data-nom="Lewis Hamilton">
-        </li>
-        <li>
-          <label for="alonso">Fernando Alonso</label>
-          <input type="checkbox" name="pilote" value="Alonso" data-nom="Fernando Alonso">
-        </li>
-        <li>
-          <label for="stroll">Lance Stroll</label>
-          <input type="checkbox" name="pilote" value="Stroll" data-nom="Lance Stroll">
-        </li>
-        <li>
-          <label for="sainz">Carlos Sainz</label>
-          <input type="checkbox" name="pilote" value="Sainz" data-nom="Carlos Sainz">
-        </li>
-        <li>
-          <label for="albon">Alexander Albon</label>
-          <input type="checkbox" name="pilote" value="Albon" data-nom="Alexander Albon">
-        </li>
-        <li>
-          <label for="ocon">Esteban Ocon</label>
-          <input type="checkbox" name="pilote" value="Ocon" data-nom="Esteban Ocon">
-        </li>
-        <li>
-          <label for="bearman">Oliver Bearman</label>
-          <input type="checkbox" name="pilote" value="Bearman" data-nom="Oliver Bearman">
-        </li>
-        <li>
-          <label for="gasly">Pierre Gasly</label>
-          <input type="checkbox" name="pilote" value="Gasly" data-nom="Pierre Gasly">
-        </li>
-        <li>
-          <label for="doohan">Jack Doohan</label>
-          <input type="checkbox" name="pilote" value="Doohan" data-nom="Jack Doohan">
-        </li>
-        <li>
-          <label for="bortoleto">Gabriel Bortoleto</label>
-          <input type="checkbox" name="pilote" value="Bortoleto" data-nom="Gabriel Bortoleto">
-        </li>
-        <li>
-          <label for="hulkenberg">Nico Hülkenberg</label>
-          <input type="checkbox" name="pilote" value="Hülkenberg" data-nom="Nico Hülkenberg">
-        </li>
-        <li>
-          <label for="tsunoda">Yuki Tsunoda</label>
-          <input type="checkbox" name="pilote" value="Tsunoda" data-nom="Yuki Tsunoda">
-        </li>
-        <li>
-          <label for="lawson">Liam Lawson</label>
-          <input type="checkbox" name="pilote" value="Lawson" data-nom="Liam Lawson">
-        </li>
-      </ul>
-    </div>
-    
-    <!-- Modif Pari (js3)-->>
+
     <div class="dividerpari"></div>
+
+    <!-- Section Résultats -->
     <div class="section">
       <h2>Résultats</h2>
       <p>Date et heure des résultats :</p>
@@ -245,19 +178,13 @@ function afficherDetailsPari() {
       <iframe src="pari.php" width="100%" height="500px" style="border: none;"></iframe>
     </div>
 
- 
+  </div>
 
-
-
-
-
-
-
-
-
+  <footer class="footer">
+    <p>Le jeu peut entraîner une dépendance. Pariez de manière responsable. Vous devez avoir plus de 18 ans pour participer.</p>
+    <p><a href="#">Conditions générales</a> | <a href="#">Support</a> | <a href="#">Privacy Policy</a></p>
+    <p>&copy; 2025 Formula One Fantasy League. Tous droits réservés.</p>
+  </footer>
 
 </body>
 </html>
-
-   
-    

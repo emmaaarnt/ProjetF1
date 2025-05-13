@@ -7,8 +7,6 @@ body {
       line-height: 100%;
       letter-spacing: 0%;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-
-
   }
 
   .navbar {
@@ -59,3 +57,59 @@ body {
     background-color: rgba(255, 255, 255, 0.5);
     margin: 0 10px;
   }
+
+
+  /* Footer */
+
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    width: 100%;
+}
+
+footer a {
+    color: #c4151c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsivité pour appareils mobiles */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .navbar-left span {
+        margin-right: 0;
+    }
+
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-img img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .project-text {
+        width: 80%;
+    }
+}

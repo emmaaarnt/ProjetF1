@@ -1,12 +1,4 @@
-body {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-}
+
 
 .navbar {
     display: flex;
@@ -58,99 +50,225 @@ body {
 }
 
 
-/* Carte des pilotes */
 
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 300;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+    font-size: 14px; /*Problèeme résolu red bar*/
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 60px;
+}
+
+/* SECTION CLASSEMENT */
 .classement {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px 20px;
 }
 
+/* CARTE PILOTE */
 .pilote {
-    width: 280px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    position: relative;
-    text-align: center;
+  width: 280px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
+.pilote:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+}
+
+/* HAUT DE LA CARTE */
 .pilote .top {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 15px;
-    font-weight: bold;
-    font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background-color: #f1f1f1;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .pilote .points {
-    text-align: right;
-    color: #000;
+  text-align: right;
+  color: #111;
 }
 
 .pilote .points span {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
+  color: #777;
 }
 
 .pilote .rang {
-    font-size: 2rem;
-    font-weight: bold;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #444;
 }
 
+/* CONTENU INFO */
 .pilote .info {
-    padding: 10px;
+  padding: 16px;
 }
 
 .prenom {
-    display: block;
-    font-size: 1rem;
-    color: #555;
+  display: block;
+  font-size: 1rem;
+  color: #666;
 }
 
 .nom {
-    display: block;
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-bottom: 5px;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #222;
 }
 
 .drapeau {
-    width: 30px;
-    margin-top: 5px;
+  width: 28px;
+  margin-top: 4px;
 }
 
 .equipe {
-    font-size: 0.9rem;
-    color: gray;
-    margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 12px;
 }
 
 .photo {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid #eee;
 }
 
 .numero {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-top: 10px;
-    color: orange;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #ff6f61;
 }
+
+/* LIEN DANS LA CARTE */
+.pilote a {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.pilote a:hover {
+  color: #005199;
+}
+
+
+
 
 
 /* Couleurs par pilote */
+.piastri     { border-top: 5px solid #ff8000; }
+.norris      { border-top: 5px solid #ffb347; }
+.verstappen  { border-top: 5px solid #0033cc; }
+.leclerc     { border-top: 5px solid #e60000; }
+.sainz       { border-top: 5px solid #cc0000; }
+.hamilton    { border-top: 5px solid #00c4ff; }
+.russell     { border-top: 5px solid #007fff; }
+.alonso      { border-top: 5px solid #006400; }
+.stroll      { border-top: 5px solid #228b22; }
+.gasly       { border-top: 5px solid #0096ff; }
+.ocon        { border-top: 5px solid #0077be; }
+.tsunoda     { border-top: 5px solid #9900cc; }
 
-.piastri {
-    border-top: 5px solid #ff8000;
+/* Responsive */
+@media (max-width: 1024px) {
+    .classement {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pilote {
+        width: 90%;
+        max-width: 300px;
+    }
 }
 
-.norris {
-    border-top: 5px solid #ffb347;
+/* Footer */
+
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    width: 100%;
 }
 
-.verstappen {
-    border-top: 5px solid #0033cc;
+footer a {
+    color: #c4151c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsivité pour appareils mobiles */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .navbar-left span {
+        margin-right: 0;
+    }
+
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-img img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .project-text {
+        width: 80%;
+    }
 }

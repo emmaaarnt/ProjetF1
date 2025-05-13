@@ -1,56 +1,60 @@
-/*Barre de navigation*/
+/* Barres de navigation et Structure générale */
+
 
 body {
     margin: 0;
     font-family: 'Orbitron', sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 
-.navbar {
+
+  }
+
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #c4151c;
+    background-color: #c4151c; 
     color: white;
     padding: 0 20px;
     height: 60px;
-}
+  }
 
-.navbar-left {
+  .navbar-left {
     display: flex;
     align-items: center;
     font-size: 10px;
-}
+  }
 
-.navbar-left img {
+  .navbar-left img {
     height: 20px;
     margin-right: 10px;
-}
+  }
 
-.navbar-left span {
+  .navbar-left span {
     font-weight: bold;
     font-size: 15px;
     margin-right: 500px;
     white-space: nowrap;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
 
-.navbar-center,
-.navbar-right {
+  .navbar-center,
+  .navbar-right {
     display: flex;
     align-items: center;
     gap: 20px;
-}
+  }
 
-.navbar a {
+  .navbar a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-}
+  }
+
 
 .divider {
     height: 30px;
@@ -59,104 +63,14 @@ body {
     margin: 0 10px;
 }
 
-.container {
-    display: flex;
-    align-items: stretch;
-    padding: 40px;
-    gap: 20px;
-}
-
-.section {
-    flex: 1;
-    padding: 0 20px;
-}
-
-.section h2 {
-    text-align: center;
-    font-size: 1.6rem;
-}
-
-.section ul {
-    list-style: disc;
-    padding-left: 20px;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.dividerpari {
-    width: 2px;
-    background-color: black;
-}
-
-.center {
-    text-align: center;
-}
-
-.buttons {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-.submit {
-    background-color: #c00000;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-.submit:hover {
-    background-color: #a00000;
-}
-
-#resultats {
-    background-color: #121212;
-    color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 30, 0, 0.4);
-}
-
-.course {
-    background-color: #1a1a1a;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-}
-
-.course h3 {
-    color: #ffae00;
-}
-
-.course p {
-    margin: 0.3rem 0;
-}
-
-.pending {
-    color: #888;
-}
-
-.error {
-    color: red;
-    text-align: center;
-}
-
 h1 {
     text-align: center;
     margin: 40px 0 30px;
-    font-size: 24px;
+    font-size: 28px;
     color: #333;
 }
 
-
-/* Bock Body */
+/* Design des projets (les sections principales) 
 
 .projects {
     display: flex;
@@ -164,6 +78,7 @@ h1 {
     gap: 60px;
     max-width: 1000px;
     margin: 0 auto;
+    flex-grow: 1; 
 }
 
 .project {
@@ -171,7 +86,7 @@ h1 {
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    background-color: white;
+    background-color: #fff;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -192,7 +107,7 @@ h1 {
 }
 
 .project-text h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #c4151c;
     margin-bottom: 10px;
 }
@@ -200,14 +115,14 @@ h1 {
 .project-text p {
     color: #555;
     margin-bottom: 20px;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 .project-text button {
     padding: 10px 20px;
-    background-color: white;
+    background-color: #c4151c;
     border: 2px solid #c4151c;
-    color: #c4151c;
+    color: white;
     border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
@@ -215,12 +130,140 @@ h1 {
 }
 
 .project-text button:hover {
+    background-color: #a00000;
+}  */
+
+/*Ajout*/
+
+.projects {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 50px auto;
+    flex-wrap: nowrap;
+    max-width: 1200px;
+}
+
+.project {
+    width: 300px;
+    min-height: 480px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Effet escalier */
+.layout1 {
+    margin-top: 0;
+}
+
+.layout2 {
+    margin-top: 20px;
+}
+
+.layout3 {
+    margin-top: 40px;
+}
+
+.project-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.project-text {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.project-text h3 {
+    font-size: 1.4rem;
+    color: #c4151c;
+    margin-bottom: 10px;
+}
+
+.project-text p {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.project-text button {
+    padding: 10px 20px;
     background-color: #c4151c;
+    border: none;
+    border-radius: 25px;
     color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.project-text button:hover {
+    background-color: #a00000;
+}
+
+/* Responsive : vertical en mobile */
+@media (max-width: 992px) {
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 90%;
+        margin-top: 20px !important;
+    }
 }
 
 
-/* RESPONSIVE */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    width: 100%;
+}
+
+footer a {
+    color: #c4151c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsivité pour appareils mobiles 
 
 @media (max-width: 768px) {
     .navbar {
@@ -228,14 +271,27 @@ h1 {
         height: auto;
         padding: 10px;
     }
+
     .navbar-left span {
         margin-right: 0;
     }
-    .container {
+
+    .projects {
         flex-direction: column;
         align-items: center;
     }
-    .card {
-        width: 90%;
+
+    .project {
+        flex-direction: column;
+        text-align: center;
     }
-}
+
+    .project-img img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .project-text {
+        width: 80%;
+    }
+} */

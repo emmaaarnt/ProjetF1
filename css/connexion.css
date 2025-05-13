@@ -1,14 +1,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+ 
   
   body {
-    background: linear-gradient(to top, #A7A7A7, #FFFFFF);
+    margin: 0;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    background: linear-gradient( top, #A7A7A7, #FFFFFF);
     
   }
 
@@ -159,6 +160,59 @@
     font-family: "orbitron", sans-serif;
   }
   
+
+
+/*Footer*/
+
+footer {
+   background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    width: 100%;
+}
+
+footer a {
+    color: #c4151c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Responsivité pour appareils mobiles */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .navbar-left span {
+        margin-right: 0;
+    }
+
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-img img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .project-text {
+        width: 80%;
+    }
+}
   
  
   
